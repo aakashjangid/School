@@ -1,0 +1,12 @@
+<br />
+<div class="container">
+    <h2>USERS</h2>
+    <br />
+    <br />
+    <div>
+        <ag-grid-angular #agGrid style="width: 43%; height: 400px;" class="ag-theme-balham" [rowData]="rowData"
+            [columnDefs]="columnDefs" [enableSorting]="true" (selectionChanged)="showData($event)"
+            [rowSelection]="rowSelection">
+        </ag-grid-angular>
+    </div>
+</div>

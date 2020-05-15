@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4" style="margin-top: 100px;">
+        <h1> <strong>Student Details</strong> </h1>
+        <br />
+        <div>
+            <table>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{student.name}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <input type="text" name="name" class="form-control" [(ngModel)]="student.name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Age</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{student.age}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <input type="text" name="age" class="form-control" [(ngModel)]="student.age" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Gender</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{student.gender}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <select [(ngModel)]="student.gender" class="form-control" name="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Standard</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{student.standard}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <input type="text" name="standard" class="form-control" [(ngModel)]="student.standard" />
+                    </td>
+                </tr>
+            </table>
+            <br /> <br />
+            <div *ngIf="student.userId === loggedInStudent.userId">
+                <button class="btn" *ngIf="!showEdit" (click)="editStudentDetails()"><span class="material-icons"> edit
+                    </span>&nbsp; Edit</button>
+                <button class="btn" *ngIf="showEdit" (click)="saveStudentDetails()"><span class="material-icons"> save
+                    </span>&nbsp; Save</button>
+                <button class="btn" (click)="cancelEdit()" style="margin-left: 40px;"> <span class="material-icons">
+                        cancel </span>&nbsp;
+                    Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 sideDiv"></div>
+</div>

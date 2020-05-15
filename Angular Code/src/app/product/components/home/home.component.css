@@ -1,0 +1,9 @@
+.card {
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.header-image {
+    background-image: url('https://randomuser.me/api/portraits/lego/5.jpg');
+    background-size: cover;
+}

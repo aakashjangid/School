@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <nav id="sidebar">
+        <br />
+        <br />
+        <ul>
+            <li>
+                <h3 (click)="goHome()"><span class="material-icons"> home </span>&nbsp; HOME</h3>
+                <br />
+            </li>
+            <li>
+                <h3 (click)="addProduct()"><span class="material-icons"> library_add </span>&nbsp; ADD PRODUCT</h3>
+                <br />
+            </li>
+            <li>
+                <h3 (click)="editProduct()"><span class="material-icons"> edit </span>&nbsp; EDIT PRODUCT</h3>
+                <br />
+            </li>
+            <li *ngIf="user.name==='Admin'">
+                <h3 (click)="goToUsers()"><span class="material-icons"> people_alt </span>&nbsp; USERS</h3>
+                <br />
+            </li>
+        </ul>
+
+    </nav>
+</div>

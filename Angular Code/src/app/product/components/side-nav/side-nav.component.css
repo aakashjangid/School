@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 28vh;
+    height: 91vh;
+    background: firebrick;
+    color: #fff;
+}
+
+.noPadding {
+    padding-left: 0px !important;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.material-icons {
+    vertical-align: sub;
+}
+
+h3 {
+    cursor: pointer;
+}
+
+h3:hover {
+    color: cornflowerblue;
+}

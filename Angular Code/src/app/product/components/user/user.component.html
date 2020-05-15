@@ -1,0 +1,40 @@
+<br />
+<div class="container">
+    <div class="col-md-4">
+        <h2 class="text-center">
+            USER DETAILS
+        </h2>
+        <br />
+        <div>
+            <table>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{user.name}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <input type="text" name="name" class="form-control" [(ngModel)]="user.name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Username</strong></td>
+                    <td class="colonColumn">:</td>
+                    <td class="detailsColumn" *ngIf="!showEdit">{{user.userName}}</td>
+                    <td class="detailsColumn" *ngIf="showEdit">
+                        <input type="text" name="userName" class="form-control" [(ngModel)]="user.userName" />
+                    </td>
+                </tr>
+            </table>
+            <br /> <br />
+            <div>
+                <button class="btn" *ngIf="!showEdit" (click)="editUserDetails()"><span class="material-icons"> edit
+                    </span>&nbsp; Edit</button>
+                <button class="btn" *ngIf="showEdit" (click)="saveUserDetails()"><span class="material-icons"> save
+                    </span>&nbsp; Save</button>
+                <button class="btn" (click)="cancelEdit()" style="margin-left: 40px;"> <span class="material-icons">
+                        cancel </span>&nbsp;
+                    Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</div>

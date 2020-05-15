@@ -1,0 +1,17 @@
+<br />
+<div class="container">
+    <h2> Edit Product </h2>
+    <br /><br />
+    <div class="col-md-6">
+        Name : <input type="text" name="name" [(ngModel)]="product.name" class="form-control" />
+        <br />
+        Description : <textarea rows="6" name="description" [(ngModel)]="product.description"
+            class="form-control"></textarea>
+        <br />
+        <div>
+            <button (click)="updateProduct()">Update</button> &nbsp;
+            <button (click)="deleteProduct()">Delete</button>
+        </div>
+    </div>
+
+</div>

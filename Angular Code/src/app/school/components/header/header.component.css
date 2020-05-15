@@ -1,0 +1,23 @@
+.header {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.logo {
+    font-size: 47px;
+    vertical-align: middle;
+}
+
+.heading {
+    vertical-align: sub;
+}
+
+h2 {
+    display: inline-block;
+} 
+
+.exit {
+    font-size: 35px;
+    padding-top: 30%;
+    cursor: pointer;
+}

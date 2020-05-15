@@ -1,0 +1,96 @@
+<div id="school" class="school">
+    <div class="container">
+        <div class="col-md-4" style="padding-top: 7%;">
+            <div class="text-center">
+                <button mat-raised-button (click)="toggleMode(true)"> <span class="material-icons">
+                        school </span>&nbsp; School</button>
+                <button style="margin-left: 50px;" mat-raised-button (click)="toggleMode(false)"> <span
+                        class="material-icons"> shopping_cart </span>&nbsp; Product</button>
+            </div>
+            <br />
+            <br />
+            <div class="container" style="background-color: white; border: 1px solid black; border-radius: 5px;">
+                <br />
+
+                <form (submit)="login()" *ngIf="loginForm">
+                    <h1 class="text-center"><strong>
+                            <span *ngIf="modeSchool"><span class="material-icons"> school </span></span>
+                            <span *ngIf="!modeSchool"><span class="material-icons"> shopping_cart </span></span>
+                            Login</strong></h1>
+                    <div class="form-group">
+                        <label for="name">User Name</label>&nbsp; &nbsp;
+                        <span *ngIf="usernameError" class="errorMsg">*Username can't be empty</span>
+                        <input type="text" class="form-control" name="username" id="username"
+                            [(ngModel)]="user.userName" (blur)="onUserNameChange()" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alterEgo">Password</label>&nbsp; &nbsp;
+                        <span *ngIf="passwordError" class="errorMsg">*Password can't be empty</span>
+                        <input type="password" class="form-control" name="password" id="password"
+                            [(ngModel)]="user.password" (blur)="onPasswordChange()" required>
+                    </div>
+
+                    <div class="text-center">
+                        <a [routerLink]="" (click)="toggleForm()">Not a member, Register!</a>
+                        <br /><br />
+                        <button type="submit" mat-raised-button color="warn">Submit</button>
+                    </div>
+                </form>
+
+                <form (submit)="registerUser()" *ngIf="!loginForm">
+
+                    <h1 class="text-center"><strong>
+                            <span *ngIf="modeSchool"><span class="material-icons"> school </span></span>
+                            <span *ngIf="!modeSchool"><span class="material-icons"> shopping_cart </span></span>
+                            Sign up</strong></h1>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>&nbsp; &nbsp;
+                        <span *ngIf="nameError" class="errorMsg">*Name can't be empty</span>
+                        <input type="text" class="form-control" name="name" id="name" (blur)="onNameChange()"
+                            [(ngModel)]="user.name" required>
+                    </div>
+
+                    <div *ngIf="modeSchool" class="row">
+                        <div class="col-md-6 form-group">
+                            <label for="name">Age</label>&nbsp; &nbsp;
+                            <span *ngIf="ageError" class="errorMsg">*Invalid Age</span>
+                            <input type="number" class="form-control" (blur)="onAgeChange()" name="age" id="age"
+                                [(ngModel)]="user.age" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="name">Gender</label>
+                            <select class="form-control" [(ngModel)]="user.gender" name="gender">
+                                <option value="M" selected>Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">User Name</label>&nbsp; &nbsp;
+                        <span *ngIf="usernameError" class="errorMsg">*Username can't be empty</span>
+                        <input type="text" class="form-control" name="userName" id="userName"
+                            [(ngModel)]="user.userName" (blur)="onUserNameChange()" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alterEgo">Password</label>&nbsp; &nbsp;
+                        <span *ngIf="passwordError" class="errorMsg">*Password can't be empty</span>
+                        <input type="password" class="form-control" name="password" id="password"
+                            [(ngModel)]="user.password" (blur)="onPasswordChange()" required>
+                    </div>
+
+                    <div class="text-center">
+                        <a [routerLink]="" (click)="toggleForm()">Already a member, Login!</a>
+                        <br />
+                        <button type="submit" mat-raised-button color="warn">Submit</button>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

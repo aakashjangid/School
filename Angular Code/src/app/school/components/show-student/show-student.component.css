@@ -1,0 +1,32 @@
+table {
+    /* margin: 0 auto; */
+    font-size: 17px;
+}
+
+.material-icons {
+    vertical-align: bottom;
+}
+
+table>tr>td {
+    width: 90px;
+    height: 40px;
+}
+
+.detailsColumn {
+    width: 200px !important;
+}
+
+.colonColumn {
+    width: 50px !important;
+}
+
+.sideDiv {
+    background-image: url('../../../../assets/school.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 91vh;
+}
+
+body {
+    overflow: hidden;
+}
